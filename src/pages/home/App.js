@@ -16,12 +16,12 @@ function App() {
     console.log(newUser.name)
 
     if (newUser.name) {
-      const {avatar_url, name, bio, login} = newUser;
-      setCurrentUser({avatar_url, name, bio, login})
+      const {avatar_url, name, bio, login, html_url} = newUser;
+      setCurrentUser({avatar_url, name, bio, login, html_url})
 
       const repositoiesData = await fetch(`https://api.github.com/users/${user}/repos`)
       const newRepos = await repositoiesData.json()
-
+      console.log(newRepos)
       if(newRepos.length) {
         setRepositories(newRepos)
       }
@@ -55,7 +55,7 @@ function App() {
               {
                 repositories.map((repository)=>{
                   console.log("1itemlistarepos")
-                  return (<ItemList title={repository.name} description={repository.description} />)
+                  return (<ItemList title={repository.name} description={repository.description} link={repository.html_url}/>)
                 })
               }
             </div>
