@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: #1d2128;
+    background-image: url('./assets/3414987.webp');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: scroll;
+}
+
+hr {
+    border: 1px solid rgba(229,229,229,0.2);
+    background-color: rgba(229,229,229,0.2);
+}
